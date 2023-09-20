@@ -1,0 +1,17 @@
+<launch>
+    <arg name="site_name" default="default_value" />
+    <arg name="camera_name" default="GOPRO-MINI-11"/>
+    <arg name="parent_directory" default="../data"/>
+    <arg name="time" default="default_value"/>
+    <arg name="weather" default="default_value"/>
+   
+    <node pkg="datacollection" type="node_gps_imu.py" name="GPS_IMU" output="screen">
+
+        <param name="site_name" value="$(arg site_name)"/>
+        <param name="camera_name" value="$(arg camera_name)"/>
+        <param name="parent_directory" value="$(arg parent_directory)"/>
+        <param name="time" value="$(arg time)"/>
+        <param name="weather" value="$(arg weather)"/>
+
+    </node>
+</launch>
